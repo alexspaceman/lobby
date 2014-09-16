@@ -2,7 +2,7 @@ app.controller('home', function($scope, $http){
 	$http.get('data/log').success(function(data){
 		$scope.rooms = data === '' ? [] : data.rooms;
 	});
-	$scope.createRoom = function(){
+	$scope.create = function(){
 		$scope.rooms.push({
 			id: $scope.rooms.length+1,
 			players: 0
@@ -26,10 +26,10 @@ app.controller('home', function($scope, $http){
 	};
 
 	$scope.players = [];
-	socket.on('newPlayer', function(name) {
+	socket.on('newPlayer', function(data) {
 		$scope.$apply(function() {
 			$scope.players.push({
-				name: name
+				name: data.name
 			});
 		});
 	});

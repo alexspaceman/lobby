@@ -31,13 +31,15 @@ io.on('connection', function (socket) {
 		});
 	});
 
-	socket.on('login', function (name){
+	socket.on('login', function (data){
 		players.push({
-			name: name
+			name: data.name
 		});
 
+		console.log(players);
+
 		socket.broadcast.emit('newPlayer', {
-			name: name
+			name: data.name
 		});
 	});
 });
