@@ -32,7 +32,6 @@ io.on('connection', function (socket) {
 	});
 
 	socket.on('login', function (name){
-		console.log("test");
 		players.push({
 			name: name
 		});
