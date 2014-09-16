@@ -1,0 +1,17 @@
+<script src="/lib/angular.js"></script>
+<script src="/lib/angular-route.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+
+<div ng-app="app">
+	<div ng-view></div>
+</div>
+
+<script>
+	var app = angular.module('app', ['ngRoute']);
+	var socket = io('http://localhost');
+</script>
+
+<script src="routes.js"></script>
+<!-- <script src="directives.js"></script>
+<script src="services.js"></script> -->
+<script src="controllers.js"></script>

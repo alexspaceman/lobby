@@ -1,0 +1,8 @@
+<button ng-click="createRoom()">create room</button>
+
+<div ng-repeat="room in rooms track by $index"><button ng-click="joinRoom(room.id)">{{room.id}}</button></div>
+
+<form  ng-submit="login()"><input ng-model="name"></form>
+<div ng-repeat="player in players track by $index">{{player.name}}</div>
+
+<div ng-show="logged">Welcome {{name}}</div>
